@@ -62,10 +62,14 @@ func (r *RubixCube) RotateCW() {
 }
 
 func (r *RubixCube) RotateLeft() {
+	r.currentFace.top.rotateCW()
+	r.currentFace.bottom.rotateCW()
 	r.currentFace = r.currentFace.right
 }
 
 func (r *RubixCube) RotateRight() {
+	r.currentFace.top.rotateCCW()
+	r.currentFace.bottom.rotateCCW()
 	r.currentFace = r.currentFace.left
 }
 
